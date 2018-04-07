@@ -1,0 +1,27 @@
+model
+{
+for( i in 1:N) {
+    h[i] ~ dcat(h.theta[1:2])
+    x1[i] ~ dcat(x1.theta[h[i],1:2])
+    x2[i] ~ dcat(x2.theta[h[i],1:2])
+    x3[i] ~ dcat(x3.theta[h[i],1:2])
+    c[i] ~ dcat(c.theta[h[i],1:2])
+}
+h.theta[1:2] ~ ddirch(h.alpha[])
+x1.theta[1,1:2] ~  ddirch(x11.alpha[])
+x1.theta[2,1:2] ~  ddirch(x12.alpha[])
+x2.theta[1,1:2] ~  ddirch(x21.alpha[])
+x2.theta[2,1:2] ~  ddirch(x22.alpha[])
+x3.theta[1,1:2] ~  ddirch(x31.alpha[])
+x3.theta[2,1:2] ~  ddirch(x32.alpha[])
+c.theta[1,1:2] ~  ddirch(c1.alpha[])
+c.theta[2,1:2] ~  ddirch(c2.alpha[])
+}
+
+data
+list(N=4,x1=c(2,2,1,1),c=c(2,2,1,1),x2=c(1,1,1,1), x3=c(1,1,1,1),
+h.alpha=c(1,1), 
+x11.alpha=c(1,1),x12.alpha=c(1,1),
+x21.alpha=c(1,1),x22.alpha=c(1,1),
+x31.alpha=c(1,1),x32.alpha=c(1,1),
+c1.alpha=c(1,1),c2.alpha=c(1,1))
