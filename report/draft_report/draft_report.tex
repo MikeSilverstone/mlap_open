@@ -86,35 +86,31 @@
 
 %------------------------------------------------
 
-\subsection{Question 1} % Sub-section
+\subsection{What sort of model?} % Sub-section
+The naive Bayes model makes the assumption that all features are conditionally independent given the class. The given Bayesian network explicitly models the conditional independence in it's structure.
 
-%------------------------------------------------
+\subsection{EM in general}
+The EM algorithm is an iterative approach to maximising the likelihood when we have hidden variables. We have a model $p(\upsilon,h|\theta)$ and we wish to find $\theta$ by maximising the marginal likelihood $p(\upsilon|\theta)$. EM achieves this by replacing he marginal likelihood with a lower bound, the bound depends on $\theta$ and the set of variational distributions $\{q\}$, we optimise this bound. This is done by first fixing $\theta$ and then optimising \textit{w.r.t} $\{q\}$, then fixing $\{q\}$ and optimising \textit{w.r.t} $\theta$. These are known as the 'E' and 'M' steps and are repeated until convergence. The EM algorithm may not always return the correct MLEs because it can get stuck on local optima.
 
-%----------------------------------------------------------------------------------------
-%	MAJOR SECTION 1
-%----------------------------------------------------------------------------------------
+\subsection{EM for the current model}
+Firstly we assume some initial parameters for the BN, so we have $\theta_{X1}^0$, $\theta_{X2}^0$, $\theta_{X3}^0$, $\theta_{H}^0$ and $\theta_{C}^0$. Then we compute the distribution for the hidden data H:
+$$
+q_{t=1}^{n=1}(H)=p(H|C=0,X1=0,X2=0,X3=1,\theta^0),
+$$
+$$
+q_{t=1}^{n=2}(H)=p(H|C=1,X1=1,X2=0,X3=0,\theta^0)...
+$$
+and so on for each data point in the training data. This is first E-step in the algorithm.
 
-\section{Task 2} % Major section
-
-%------------------------------------------------
-
-\subsection{Question 1} % Sub-section
-
-
-%------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
-
-\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
-
-%\bibitem[1]{businvert:1995}
-%Mircea R. Stan, Member, IEEE, and Wayne P. Burleson, Member, IEEE (1995).
-%\newblock Bus-Invert Coding for Low-Power I/O.
-%\newblock {\em IEEE TRANSACTIONS ON VERY LARGE SCALE INTEGRATION (VLSI) SYSTEMS, VOL. 3, NO. I, MARCH 1995}, 49-58.
- 
-\end{thebibliography}
-
+The first M-step involves maximising the energy term by choosing new values for $\theta$. The energy term is given by the following equation:
+\begin{multline}
+E(\theta) = \displaystyle\sum_{n=1}^{N}
+\{
+\langle\log p(C^n|H^n) \rangle_{q_t^n(H)}
+\langle\log p(X1^n|H^n) \rangle_{q_t^n(H)} + 
+\langle\log p(X2^n|H^n) \rangle_{q_t^n(H)} \\ +
+\langle\log p(X3^n|H^n) \rangle_{q_t^n(H)} + 
+\langle\log p(H^n) \rangle_{q_t^n(H)}
+\}
+\end{multline}
 \end{document}
