@@ -94,7 +94,7 @@ The naive Bayes model makes the assumption that all features are conditionally i
 The EM algorithm is an iterative approach to maximising the likelihood when we have hidden variables. We have a model $p(\upsilon,h|\theta)$ and we wish to find $\theta$ by maximising the marginal likelihood $p(\upsilon|\theta)$. EM achieves this by replacing he marginal likelihood with a lower bound, the bound depends on $\theta$ and the set of variational distributions $\{q\}$, we optimise this bound. This is done by first fixing $\theta$ and then optimising \textit{w.r.t} $\{q\}$, then fixing $\{q\}$ and optimising \textit{w.r.t} $\theta$. These are known as the 'E' and 'M' steps and are repeated until convergence. The EM algorithm may not always return the correct MLEs because it can get stuck on local optima.
 
 \subsection{EM for the current model}
-Firstly we assume some initial parameters for the BN, so we have $\theta_{X1}^0$, $\theta_{X2}^0$, $\theta_{X3}^0$, $\theta_{H}^0$ and $\theta_{C}^0$. Then we compute the distribution for the hidden data H:
+Firstly we assume some initial parameters for the distribution, so we have $\theta_{X1}^0$, $\theta_{X2}^0$, $\theta_{X3}^0$, $\theta_{H}^0$ and $\theta_{C}^0$. Then we compute the distribution for the hidden data H:
 $$
 q_{t=1}^{n=1}(H)=p(H|C=0,X1=0,X2=0,X3=1,\theta^0),
 $$
@@ -119,6 +119,7 @@ To calculate the M-step update for each table we have to maximise each term of t
 $$
 \displaystyle\sum_{n}\mathbb{I}[C^n=i]q^n(H=j) \log p(C=i|H=j))
 $$
+where the indicator function $\mathbb{I}[C^n=i]$ equals 1 if C is in state i and is zero otherwise.
 We normalise the table by adding a Lagrange term:
 $$
 \displaystyle\sum_{n}\mathbb{I}[C^n=i]q^n(H=j) \log p(C=i|H=j))
@@ -133,9 +134,7 @@ $$
 p(C=i|H=j)=
 \frac{\sum_{n}\mathbb{I}[C^n=i]q^n(H=j)}{\sum_{n,k}\mathbb{I}[C^n=k]q^n(H=j)}
 $$
-This shows a relationship in the table updates, when we have missing data we replace the functions such as $\mathbb{I}[C^n=i]$ by the assumed distributions $q$.
-
-We use this relationship to calculate the table updates for each other term in the energy equation.
+This result highlights a relationship between the table updates and the standard MLE. That is, when we have missing data we replace the functions such as $\mathbb{I}[C^n=i]$ which represent the real counts of the data, by the assumed distributions $q$. We use this relationship to calculate the table updates for each other term in the energy equation.
 
 We can then perform the E-step again using our updated parameters such that we have new assumed distributions for the hidden variable:
 $$
