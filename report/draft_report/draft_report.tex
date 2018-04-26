@@ -27,6 +27,7 @@
 \usepackage{wrapfig} % Allows in-line images such as the example fish picture
 
 \usepackage{amsmath}
+\usepackage{amssymb}
 
 \usepackage{float}
 \restylefloat{table}
@@ -106,11 +107,42 @@ The first M-step involves maximising the energy term by choosing new values for 
 \begin{multline}
 E(\theta) = \displaystyle\sum_{n=1}^{N}
 \{
-\langle\log p(C^n|H^n) \rangle_{q_t^n(H)}
+\langle\log p(C^n|H^n) \rangle_{q_t^n(H)} +
 \langle\log p(X1^n|H^n) \rangle_{q_t^n(H)} + 
 \langle\log p(X2^n|H^n) \rangle_{q_t^n(H)} \\ +
 \langle\log p(X3^n|H^n) \rangle_{q_t^n(H)} + 
 \langle\log p(H^n) \rangle_{q_t^n(H)}
 \}
 \end{multline}
+
+To calculate the M-step update for each table we have to maximise each term of the above equation individually. The contribution of the term $p(C=i|H=j)$ is given by:
+$$
+\displaystyle\sum_{n}\mathbb{I}[C^n=i]q^n(H=j) \log p(C=i|H=j))
+$$
+We normalise the table by adding a Lagrange term:
+$$
+\displaystyle\sum_{n}\mathbb{I}[C^n=i]q^n(H=j) \log p(C=i|H=j))
++ \lambda\{1-\sum_{k}p(C=k|H=j)\}
+$$
+We differentiate with respect to $p(C=i|H=j)$ and equate to zero to find the maximum, this gives us:
+$$
+\displaystyle\sum_{n}\mathbb{I}[C^n=i] \frac{q^n(H=j)}{p(C=i|H=j)} = \lambda
+$$
+Hence
+$$
+p(C=i|H=j)=
+\frac{\sum_{n}\mathbb{I}[C^n=i]q^n(H=j)}{\sum_{n,k}\mathbb{I}[C^n=k]q^n(H=j)}
+$$
+This shows a relationship in the table updates, when we have missing data we replace the functions such as $\mathbb{I}[C^n=i]$ by the assumed distributions $q$.
+
+We use this relationship to calculate the table updates for each other term in the energy equation.
+
+We can then perform the E-step again using our updated parameters such that we have new assumed distributions for the hidden variable:
+$$
+q_{t}^{n=1}(H)=p(H|C=0,X1=0,X2=0,X3=1,\theta^{t-1}),
+$$
+$$
+q_{t}^{n=2}(H)=p(H|C=1,X1=1,X2=0,X3=0,\theta^{t-1})...
+$$
+We perform the steps E and M iteratively until the algorithm converges to a local optima.
 \end{document}
