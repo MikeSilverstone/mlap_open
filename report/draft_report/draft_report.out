@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section.1}{Task 1}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{What sort of model?}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{EM in general}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{EM for the current model}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Gibbs sampling for the current model}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{Running Gibbs sampling for the current model}{section.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.5.1}{Compare contrast EM/Gibbs sampling}{subsection.1.5}% 7
+\BOOKMARK [2][-]{subsection.1.6}{Using informative priors}{section.1}% 8
+\BOOKMARK [1][-]{section.2}{Task 2}{}% 9
+\BOOKMARK [2][-]{subsection.2.1}{Relationship to random walks on graph}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.2}{Commute time method advantages}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.3}{Commute time criticisms}{section.2}% 12

@@ -1,5 +1,9 @@
 [0] Config.pm:302> INFO - This is Biber 2.10
 [0] Config.pm:305> INFO - Logfile is 'draft_report.blg'
 [21] biber-MSWIN64:313> INFO - === 
-[270] Utils.pm:209> ERROR - Cannot find control file 'draft_report.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
-[270] Biber.pm:114> INFO - ERRORS: 1
+[42] Biber.pm:371> INFO - Reading 'draft_report.bcf'
+[104] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
+[109] Utils.pm:193> WARN - The file 'draft_report.bcf' does not contain any citations!
+[114] bbl.pm:617> INFO - Writing 'draft_report.bbl' with encoding 'ascii'
+[114] bbl.pm:720> INFO - Output to draft_report.bbl
+[115] Biber.pm:110> INFO - WARNINGS: 1
