@@ -1,0 +1,224 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{laplacianEigenmap}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b2aeb0539e71c989e52b170b56b1fabd}{%
+           family={Belkin},
+           familyi={B\bibinitperiod},
+           given={Mikhail},
+           giveni={M\bibinitperiod}}}%
+        {{hash=156804623cd62fb419db269c507e26ce}{%
+           family={Niyogi},
+           familyi={N\bibinitperiod},
+           given={Partha},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{91e66b6bb0ec19548744f2daa009553e}
+      \strng{fullhash}{91e66b6bb0ec19548744f2daa009553e}
+      \strng{bibnamehash}{91e66b6bb0ec19548744f2daa009553e}
+      \strng{authorbibnamehash}{91e66b6bb0ec19548744f2daa009553e}
+      \strng{authornamehash}{91e66b6bb0ec19548744f2daa009553e}
+      \strng{authorfullhash}{91e66b6bb0ec19548744f2daa009553e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{One of the central problems in machine learning and pattern recognition is to develop appropriate representations for complex data. We consider the problem of constructing a representation for data lying on a low-dimensional manifold embedded in a high-dimensional space. Drawing on the correspondence between the graph Laplacian, the Laplace Beltrami operator on the manifold, and the connections to the heat equation, we propose a geometrically motivated algorithm for representing the high-dimensional data. The algorithm provides a computationally efficient approach to nonlinear dimensionality reduction that has locality-preserving properties and a natural connection to clustering. Some potential applications and illustrative examples are discussed.}
+      \field{journaltitle}{Neural Computation}
+      \field{number}{6}
+      \field{title}{Laplacian Eigenmaps for Dimensionality Reduction and Data Representation}
+      \field{volume}{15}
+      \field{year}{2003}
+      \field{pages}{1373\bibrangedash 1396}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1162/089976603321780317
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1162/089976603321780317
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1162/089976603321780317
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1162/089976603321780317
+      \endverb
+    \endentry
+    \entry{diffusionMap}{article}{}
+      \name{author}{7}{}{%
+        {{hash=e85dd2ca238224cc444d35e6899025da}{%
+           family={Coifman},
+           familyi={C\bibinitperiod},
+           given={R.\bibnamedelimi R.},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=4a95a7dedd01d444edfb75069bd12064}{%
+           family={Lafon},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=368bb738aa7496955eba4af1b34c2ac2}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={A.\bibnamedelimi B.},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=84f7f2c7d23ecd1cbeaf0fd9829a9896}{%
+           family={Maggioni},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=56bfade23180a77f918d5f281db3908c}{%
+           family={Nadler},
+           familyi={N\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=9852d33aa927c4e5a98afbfffce7f8fe}{%
+           family={Warner},
+           familyi={W\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=9f83fede0f62de05405ad64587069ca5}{%
+           family={Zucker},
+           familyi={Z\bibinitperiod},
+           given={S.\bibnamedelimi W.},
+           giveni={S\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {National Academy of Sciences}%
+      }
+      \strng{namehash}{c8b4f562c86d116206fc048ab050037a}
+      \strng{fullhash}{db4c2bb983fdeaa9a4dc8eb1b48f7786}
+      \strng{bibnamehash}{db4c2bb983fdeaa9a4dc8eb1b48f7786}
+      \strng{authorbibnamehash}{db4c2bb983fdeaa9a4dc8eb1b48f7786}
+      \strng{authornamehash}{c8b4f562c86d116206fc048ab050037a}
+      \strng{authorfullhash}{db4c2bb983fdeaa9a4dc8eb1b48f7786}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We provide a framework for structural multiscale geometric organization of graphs and subsets of \documentclass[12pt]{minimal} \usepackage{amsmath} \usepackage{wasysym} \usepackage{amsfonts} \usepackage{amssymb} \usepackage{amsbsy} \usepackage{mathrsfs} \setlength{\oddsidemargin}{-69pt} \begin{document} \begin{equation*}{\mathbb{R}}^{n}\end{equation*}\end{document}. We use diffusion semigroups to generate multiscale geometries in order to organize and represent complex structures. We show that appropriately selected eigenfunctions or scaling functions of Markov matrices, which describe local transitions, lead to macroscopic descriptions at different scales. The process of iterating or diffusing the Markov matrix is seen as a generalization of some aspects of the Newtonian paradigm, in which local infinitesimal transitions of a system lead to global macroscopic descriptions by integration. We provide a unified view of ideas from data analysis, machine learning, and numerical analysis.}
+      \field{issn}{0027-8424}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{number}{21}
+      \field{title}{Geometric diffusions as a tool for harmonic analysis and structure definition of data: Diffusion maps}
+      \field{volume}{102}
+      \field{year}{2005}
+      \field{pages}{7426\bibrangedash 7431}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1073/pnas.0500334102
+      \endverb
+      \verb{eprint}
+      \verb http://www.pnas.org/content/102/21/7426.full.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.pnas.org/content/102/21/7426
+      \endverb
+      \verb{url}
+      \verb http://www.pnas.org/content/102/21/7426
+      \endverb
+    \endentry
+    \entry{commuteTime}{article}{}
+      \name{author}{2}{}{%
+        {{hash=842471b2f1915f365b21c8a6f60d970c}{%
+           family={Qiu},
+           familyi={Q\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=e2671db83db252c51150633a63b7a1b6}{%
+           family={Hancock},
+           familyi={H\bibinitperiod},
+           given={E.\bibnamedelimi R.},
+           giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{69bfc08ea324e63cdded8106753200aa}
+      \strng{fullhash}{69bfc08ea324e63cdded8106753200aa}
+      \strng{bibnamehash}{69bfc08ea324e63cdded8106753200aa}
+      \strng{authorbibnamehash}{69bfc08ea324e63cdded8106753200aa}
+      \strng{authornamehash}{69bfc08ea324e63cdded8106753200aa}
+      \strng{authorfullhash}{69bfc08ea324e63cdded8106753200aa}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0162-8828}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{Clustering and Embedding Using Commute Times}
+      \field{volume}{29}
+      \field{year}{2007}
+      \field{pages}{1873\bibrangedash 1890}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1109/TPAMI.2007.1103
+      \endverb
+      \keyw{Green's function methods;eigenvalues and eigenfunctions;graph theory;image motion analysis;image segmentation;matrix algebra;pattern clustering;clustering;commute time matrix;discrete Green's function;eigenvector;embedding;graph Laplacian spectrum;graph nodes;image segmentation;lazy random walk;multibody motion tracking;raw proximity matrix;Eigenvalues and eigenfunctions;Green's function methods;Image segmentation;Image sequences;Kernel;Laplace equations;Principal component analysis;Robustness;Time measurement;Tracking;Commute time;Cspectral graph theory;clustering;embedding;image segmentation;motion tracking;Algorithms;Artificial Intelligence;Cluster Analysis;Image Enhancement;Image Interpretation,Computer-Assisted;Information Storage and Retrieval;Pattern Recognition,Automated;Reproducibility of Results;Sensitivity and Specificity}
+    \endentry
+    \entry{commuteTimeCriticism}{article}{}
+      \name{author}{3}{}{%
+        {{hash=86714cf89fed80215d15171e9ed5f412}{%
+           family={Luxburg},
+           familyi={L\bibinitperiod},
+           given={Ulrike},
+           giveni={U\bibinitperiod},
+           prefix={von},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=c2133b829d9929b3fa5fd12f86d2bedb}{%
+           family={Radl},
+           familyi={R\bibinitperiod},
+           given={Agnes},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9e3f4c60354fda4d9127485afba87230}{%
+           family={Hein},
+           familyi={H\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{0dd496fcd509c6a8ce7bdca2d54f20bb}
+      \strng{fullhash}{0dd496fcd509c6a8ce7bdca2d54f20bb}
+      \strng{bibnamehash}{0dd496fcd509c6a8ce7bdca2d54f20bb}
+      \strng{authorbibnamehash}{0dd496fcd509c6a8ce7bdca2d54f20bb}
+      \strng{authornamehash}{0dd496fcd509c6a8ce7bdca2d54f20bb}
+      \strng{authorfullhash}{0dd496fcd509c6a8ce7bdca2d54f20bb}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Hitting times, commute distances and the spectral gap for large random geometric graphs}
+      \field{volume}{abs/1003.1266}
+      \field{year}{2010}
+      \verb{eprint}
+      \verb 1003.1266
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1003.1266
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1003.1266
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Simple Sectioned Essay Template
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing essay content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+
+\usepackage{geometry} % Required to change the page size to A4
+\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\usepackage{float}
+\restylefloat{table}
+
+\usepackage{tabu}
+
+\linespread{1.2} % Line spacing
+
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+
+\usepackage[
+    backend=biber,
+    style=ieee
+]{biblatex}
+\addbibresource{bibliography.bib}
+
+\usepackage[]{hyperref}
+\usepackage{cleveref}
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+
+\textsc{\LARGE University of York}\\[1.5cm] % Name of your university/college
+\textsc{\Large MLAP}\\[0.5cm] % Major heading such as course name
+\textsc{\large Machine Learning and Applications}\\[0.5cm] % Minor heading such as course title
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Open Examination}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\center \emph{Examination number:}\\
+\center Y3606797
+\end{flushleft}
+\end{minipage}
+
+%\includegraphics{Logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Include a table of contents
+
+\newpage % Begins the essay on a new page instead of on the same page as the table of contents 
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{Task 2}
+\subsection{Relationship to random walks on graph}
+The prevailing idea in the papers is to preserve the locality of the data points across the mapping, graphs are constructed and it is useful to consider measures of distance between data on the manifolds which relate to a random walk model on the graphs:
+
+The Laplacian eigenmap method \cite{laplacianEigenmap} does so by using the weighted Laplacian of the similarity graph to approximate the Laplace-Beltrami operator. The weights are defined by a kernel (the heat kernel) which can be seen as the probability of a random walker making a step from x to y in the graph.
+
+The diffusion map method \cite{diffusionMap} introduces a Diffusion operator which is also related to the weighted Laplacian as in \cite{laplacianEigenmap}. The spectral properties of a Markov chain are used to describe the geometry of the data. A diffusion distance is defined relating the probability of a random walk starting at x and arriving at y in t steps (intuitively the rate of connectivity of the points x and y in the data), this is computed by the using the spectral decomposition of the weighted Laplacian.
+
+The commute times method \cite{commuteTime} uses a similar approach to \cite{laplacianEigenmap} in that it relates to the random walk by the heat kernel of the weighted graph. It defines the commute time as the expected time for the
+random walk to travel from node u to reach node v and then
+return.
+
+The methods of Laplaician eigenmap \cite{laplacianEigenmap} and Commute times \cite{commuteTime} are related because they both attempt to minimise a similar objective function, related to the heat kernel and associated random walk model.
+
+The Laplacian eigenamp \cite{laplacianEigenmap} method is a special case of Diffusion map \cite{diffusionMap} which handles manifolds where the data is sampled uniformly.
+
+\subsection{Commute time embedding advantages}
+Commute times reflect the combined effect of all possible weighted paths between a pair of nodes \cite{commuteTime}. This means they are more robust against edge insertions and deletions. This combined effect results in pairs nodes that are clustered together by commute time methods having a higher affinity (affinity meaning the chosen measure of similarity) and having lower affinity with nodes outside the cluster. This is also observed in the affinity matrix, there is a stronger block structure present, which has been observed as a key insight in the success of clustering methods.
+
+More evidence of commute times advantageous clustering ability comes from the fact that the smallest eigenvector in the commute time matrix has a more stable distribution over it's components, this means that there is a stronger discrimination between data clusters.
+
+The commute time method conveys more information about a cluster due to the fact that it takes into account the full Laplacian eigenspectrum when being computed \cite{commuteTime}.
+
+These results are important as they allow the use of commute time embedding to work with data that is inherently difficult due to contamination with noise and outlier data points. Similar objects will have smaller commute times and outliers and noise will be spread sparsely which allows a clustering method such as K-Means to effectively differentiate between the data.
+
+\subsection{Commute time embedding criticisms}
+The paper explores the commute times for graphs which are large (have a large number of nodes). The main conclusion is that for large graphs the commute time does not provide any useful information about the global structure of the graph. Instead of providing information about clustering within a graph, it is shown that for large graphs the commute time can be approximated accurately with the following simple equation, which is just a local density measure for the nodes:
+$$
+1/d_i + 1/d_j
+$$
+Where $d_i$ and $d_j$ are the degrees of the nodes i and j respectively. It is stated that graphs with nodes in the 1000s are susceptible to this effect and that for high dimensional data, such as that in most machine learning problems, the effect is even stronger \cite{commuteTimeCriticism}.
+
+\printbibliography 
+\end{document}

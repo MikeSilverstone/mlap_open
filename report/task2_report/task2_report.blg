@@ -1,0 +1,18 @@
+[0] Config.pm:302> INFO - This is Biber 2.10
+[0] Config.pm:305> INFO - Logfile is 'task2_report.blg'
+[21] biber-MSWIN64:313> INFO - === 
+[43] Biber.pm:371> INFO - Reading 'task2_report.bcf'
+[105] Biber.pm:857> INFO - Found 4 citekeys in bib section 0
+[115] Biber.pm:3976> INFO - Processing section 0
+[126] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[127] bibtex.pm:1444> INFO - Reading ascii input as UTF-8
+[129] bibtex.pm:1490> INFO - LaTeX decoding ...
+[140] bibtex.pm:1306> INFO - Found BibTeX data source 'bibliography.bib'
+[155] Utils.pm:193> WARN - month field 'Nov' in entry 'commuteTime' is not an integer - this will probably not sort properly.
+[169] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[169] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[169] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[169] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[175] bbl.pm:617> INFO - Writing 'task2_report.bbl' with encoding 'ascii'
+[178] bbl.pm:720> INFO - Output to task2_report.bbl
+[181] Biber.pm:110> INFO - WARNINGS: 1
